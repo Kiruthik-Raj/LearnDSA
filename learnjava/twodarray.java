@@ -13,7 +13,11 @@ public class twodarray {
 
         System.out.println(newarr[2][3]);
 
+         //row length of 2D arra
+
         System.out.println(newarr.length);
+
+        //column length of 2D array
 
         System.out.println(newarr[0].length);
 
@@ -23,16 +27,64 @@ public class twodarray {
         {
             for(j = 0;j<newarr[0].length;j++)
             {
-                System.out.println(newarr[i][j] + " ");
+                System.out.print(newarr[i][j] + " ");
             }
         }
 
         int max = Integer.MIN_VALUE;
 
-        System.out.println("Enter the value if n: ");
+        System.out.println("\nEnter the value of n: ");
 
         int n = sc.nextInt();
 
         int[] maxarr = new int[n];
+
+        for(i = 0;i<n;i++)
+        {
+            System.out.println("Enter the " + (i + 1) + " th element: ");
+            maxarr[i] = sc.nextInt();
+        }
+
+        //Logic for finding the max value
+
+
+    for(i = 0;i<n;i++)
+    {
+        if(maxarr[i] > max)
+        {
+            max = maxarr[i];
+        }
+    }
+
+    System.out.println("Maximum of the array elements is: " + max);
+
+    //Logic fo reversing an array
+
+    int[] revarr = {1,2,3,4,5,6,7,8};
+
+    int k = 0;
+    int temp = 0;
+    i = 0;
+    j = revarr.length - 1;
+
+    while(i<j)
+    {
+        temp= revarr[i];
+        revarr[i] = revarr[j];
+        revarr[j] = temp;
+
+        i++;
+        j--;
+    }
+
+
+    System.out.println("Printing the reversed array: ");
+
+    for(k  = 0;k<revarr.length;k++)
+    {
+        System.out.print(revarr[k] +  " ");
+    }
+
+
     }
 }
