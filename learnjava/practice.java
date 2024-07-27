@@ -1,4 +1,4 @@
-package learnjava;
+
 import java.util.Scanner;
 
 public class practice {
@@ -23,5 +23,11 @@ public class practice {
         str.setCharAt(3, 'r');
 
         System.out.println(str);
+
+        int numone = 500;
+        int numtwo = 8;
+        int divresult=  numone / numtwo;
+
+        System.out.println("Division result: " + divresult);
     }
 }

@@ -1,35 +1,39 @@
-
 import java.util.Scanner;
 
+class TreeNode
+{
+    int val;
+    TreeNode left;
+    TreeNode right;
 
-class treeNode{
-    int data;
-    treeNode left;
-    treeNode right;
-
-    public treeNode(int data){
-        this.data = data;
+    public TreeNode(int val)
+    {
+        this.val = val;
         this.left = null;
         this.right = null;
     }
+
 }
 
-class myTree{
-    treeNode root;
-    public void insert(int data){
-        treeNode newNode = new treeNode(data);
+class MyBinaryTree{
+    TreeNode root;
+
+    void insert(int data)
+    {
+        TreeNode newNode = new TreeNode(data);
+
         if(root == null)
         {
-            root = newNode;
+            root  = newNode;
         }
 
-        treeNode current = root;
-        treeNode parent = null;
+        TreeNode current = root;
 
-        if(current!=null)
-        {
+        TreeNode parent =  null;
+
+        while(current!=null){
             parent = current;
-            if(current.data > data)
+            if(current.val  > data)
             {
                 current = current.left;
                 if(current == null)
@@ -37,7 +41,6 @@ class myTree{
                     parent.left = newNode;
                     parent = parent.left;
                 }
-
             }
             else{
                 current = current.right;
@@ -48,56 +51,51 @@ class myTree{
                 }
             }
         }
+
     }
 
-    public void display(treeNode root)
+    void inOrderTraversal(TreeNode  root)
     {
+        System.out.println("Printing the tree. ");
+
         if(root == null)
         {
-            System.out.println("Empty Tree!!!");
+            System.out.println("Empty tree!!!");
         }
 
         if(root != null)
         {
-
-            System.out.println("Printing the tree");
-
-            System.out.println(root.data);
+            
             root = root.left;
-
-            System.out.println(root.data);
-
+            System.out.println(root.val);
             root = root.right;
-
         }
     }
-
-    
-
 }
 
-
-public class bst {
+public class mytree {
     public static void main(String args[])
     {
+        System.out.println("Tree in Java!!!");
+
         Scanner sc = new Scanner(System.in);
-        System.err.println("Enter number of nodes to enter: ");
+
+        System.out.println("Enter the number of nodes you want to insert into the tree: ");
+
         int n = sc.nextInt();
+
+        MyBinaryTree newTree = new MyBinaryTree();
 
         int i = 0;
 
-        myTree newTree = new myTree();
-
-        for(i = 0;i<n;i++){
-            System.out.println("Enter the " + (i +  1) + " the element: ");
+        for(i = 0;i<n;i++)
+        {
+            System.out.println("Enter the  " + (i +  1) + " th element: ");
             int data = sc.nextInt();
             newTree.insert(data);
         }
 
-        newTree.display(newTree.root);
+        newTree.inOrderTraversal(newTree.root);
 
-
-
-        sc.close();
     }
 }

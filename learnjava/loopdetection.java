@@ -1,4 +1,4 @@
-package learnjava;
+
 
 import java.util.Scanner;
 

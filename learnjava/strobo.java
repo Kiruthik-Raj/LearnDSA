@@ -1,4 +1,4 @@
-package learnjava;
+
 import java.util.*;
 public class strobo {
     public static void main(String args[])

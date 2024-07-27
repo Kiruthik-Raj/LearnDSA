@@ -1,4 +1,4 @@
-package learnjava;
+
 
 import java.util.Scanner;
 
@@ -13,7 +13,7 @@ public class twodarray {
 
         System.out.println(newarr[2][3]);
 
-         //row length of 2D arra
+         //row length of 2D array
 
         System.out.println(newarr.length);
 
@@ -58,7 +58,7 @@ public class twodarray {
 
     System.out.println("Maximum of the array elements is: " + max);
 
-    //Logic fo reversing an array
+    //Logic for reversing an array
 
     int[] revarr = {1,2,3,4,5,6,7,8};
 
@@ -77,13 +77,30 @@ public class twodarray {
         j--;
     }
 
+    //extra space complexity logic for reversing using a new array and insertion of elements into that array in reverse order
 
-    System.out.println("Printing the reversed array: ");
+    int[] newrevarr = new int[revarr.length];
+
+    for(i=revarr.length - 1;i>=0;i--)
+    {
+        newrevarr[i] = revarr[i];
+    }
+
+    System.out.println("Printing the reverse array! ");
+
+    for(i=0;i<newrevarr.length;i++)
+    {
+        System.out.print(newrevarr[i] + " ");
+    }
+
+
+    System.out.println("\n Printing the reversed array: ");
 
     for(k  = 0;k<revarr.length;k++)
     {
         System.out.print(revarr[k] +  " ");
     }
+
 
 
     }

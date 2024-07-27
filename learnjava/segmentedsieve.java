@@ -1,4 +1,4 @@
-package learnjava;
+
 import java.util.*;
 public class segmentedsieve {
     static void segsievesolution(int n, int m){

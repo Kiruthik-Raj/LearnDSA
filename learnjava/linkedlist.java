@@ -1,6 +1,7 @@
-package learnjava;
 
 import java.util.Scanner;
+
+
 //creating a class to declare the node structure
 class Node{
     int data;
@@ -39,6 +40,20 @@ class ll {
 
         }
     }
+
+    public void insertAtStart(int data)
+    {
+        Node newNode = new Node(data);
+
+        if(head == null)
+        {
+            head = newNode;
+        }
+        else{
+            newNode.next = head;
+            head = newNode;
+        }
+    }
     //methos to traverse through the linked list
     public void traverse()
     {
@@ -46,11 +61,10 @@ class ll {
         //traverse till the end of the linked list, printing all the 
         while(temp != null)
         {
-            System.out.println(temp.data + " -> ");
+            System.out.print(temp.data + " -> ");
             temp = temp.next;
         }
 
-        System.out.println();
     }
 }
 
